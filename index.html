@@ -1,1 +1,34 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Homework 10</title><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="/goit-js-hw-10-food-service/styles.c67cd76f.css"></head><body> <div class="toolbar">  <div class="theme-switch"> <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца"> <use href="/goit-js-hw-10-food-service/sprite.097e5fe6.svg#sun"></use> </svg> <div class="theme-switch__control"> <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle" aria-label="Переключить между тёмной и светлой темой"> <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle"> </label> <div aria-hidden="true" class="theme-switch__marker"></div> </div> <svg class="theme-switch__icon" aria-label="Иконка луны"> <use href="/goit-js-hw-10-food-service/sprite.097e5fe6.svg#moon"></use> </svg> </div> </div>  <ul class="js-menu menu"></ul> </body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Homework 10</title><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="/goit-js-hw-10-food-service/styles.38a3067f.css"></head><body> <div class="toolbar">  <div class="theme-switch"> <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца"> <use href="/goit-js-hw-10-food-service/sprite.097e5fe6.svg#sun"></use> </svg> <div class="theme-switch__control"> <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle" aria-label="Переключить между тёмной и светлой темой"> <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle"> </label> <div aria-hidden="true" class="theme-switch__marker"></div> </div> <svg class="theme-switch__icon" aria-label="Иконка луны"> <use href="/goit-js-hw-10-food-service/sprite.097e5fe6.svg#moon"></use> </svg> </div> </div>  <ul class="js-menu menu" id="items-menu"> <script id="item-template" type="text/x-handlebars-template">
+{{#each this}}
+        <li class="menu__item">
+          <article class="card">
+            <img src="{{image}}"
+              alt="" class="card__image" loading="lazy"/>
+            <div class="card__content">
+              
+              <h2 class="card__name">{{name}}</h2>
+              
+              <p class="card__price">
+                <i class="material-icons"> monetization_on </i>
+                {{price}} кредитов
+              </p>
+        
+              <p class="card__descr">
+                {{description}}
+              </p>
+        
+              <ul class="tag-list">
+                {{#each ingredients}}
+                <li class="tag-list__item">{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+        
+            <button class="card__button button">
+              <i class="material-icons button__icon"> shopping_cart </i>
+              В корзину
+            </button>
+          </article>
+        </li>
+{{/each}}
+      </script> </ul> <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> <script src="/goit-js-hw-10-food-service/script.7103634c.js"></script> </body></html>
